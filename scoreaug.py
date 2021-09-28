@@ -14,6 +14,6 @@ def augment_score(img: Union[Image, np.ndarray], bgs: List[Image]) -> Image:
     return np.minimum(img, bg)
 
 
-def get_bg_imgs(bg_im_path: str = '../imslp/imslp') -> Generator[Image]:
+def get_bg_imgs(bg_im_path: str = '../imslp/imslp') -> Generator[Image, None, None]:
     for f in Path(bg_im_path).glob('*'):
         yield img_open(f)
